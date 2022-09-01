@@ -2,10 +2,22 @@
 //  main.swift
 //  13_Inheritance
 //
-//  Created by Dylan_Yoon on 2022/06/20.
+//  Created by Hamo on 2022/08/31.
 //
 
-import Foundation
+class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return "traveling at \(currentSpeed) miles per hour"
+    }
+    
+    func makeNoise() {
+        
+    }
+}
 
-print("Hello, World!")
+let someVehicle = Vehicle()
 
+class Bicycle: Vehicle {
+    var hasBasket = false
+}
