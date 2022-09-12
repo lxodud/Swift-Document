@@ -5,6 +5,8 @@
 //  Created by TaeLee on 2022/08/30.
 //
 
+import Darwin
+
 // MARK: Setting Initial Values for Stored Properties
 //struct Fahrenheit {
 //    var temperature: Double
@@ -171,5 +173,116 @@ class RecipeIngredient: Food {
     }
     override convenience init(name: String) {
         self.init(name: name, quantity: 1)
+    }
+}
+
+let oneMysteryItem = RecipeIngredient()
+
+print(oneMysteryItem.name)
+
+let wholeNumber: Double = 12345.0
+let pi = 3.14159
+
+if let valueMaintained = Int(exactly: wholeNumber) {
+    print("\(wholeNumber) conversion to Int maintains value of \(valueMaintained)")
+}
+// Prints "12345.0 conversion to Int maintains value of 12345"
+
+let valueChanged = Int(exactly: pi)
+// valueChanged is of type Int?, not Int
+
+if valueChanged == nil {
+    print("\(pi) conversion to Int does not maintain value")
+}
+// Prints "3.14159 conversion to Int does not maintain value"
+
+struct Animal {
+    let species: String
+    
+    init?(species: String) {
+        if species.isEmpty {
+            return nil
+        }
+        
+        self.species = species
+    }
+}
+
+let someAnimal1 = Animal(species: "monkey")
+
+if let monkey = someAnimal1 {
+    print("원숭이")
+} else {
+    print("nil")
+}
+// 원숭이
+
+let someAnimal2 = Animal(species: "")
+
+if let rabbit = someAnimal2 {
+    print("토끼")
+} else {
+    print("nil")
+}
+// nil
+
+//enum TemperatureUnit {
+//    case kelvin, celsius, fahrenheit
+//    init?(symbol: Character) {
+//        switch symbol {
+//        case "K":
+//            self = .kelvin
+//        case "C":
+//            self = .celsius
+//        case "F":
+//            self = .fahrenheit
+//        default:
+//            return nil
+//        }
+//    }
+//}
+//
+//let fahrenheit = TemperatureUnit(symbol: "F")
+//
+//if fahrenheit != nil {
+//    print("fahrenheit")
+//}
+//
+//let unknown = TemperatureUnit("x")
+//
+//if unknown == nil {
+//    print("nil")
+//}
+
+enum TemperatureUnit: Character {
+    case kelvin = "K", celsius = "C", fahrenheit = "F"
+}
+
+let fahrenheit = TemperatureUnit(rawValue: "F")
+
+if fahrenheit != nil {
+    print("fahrenheit")
+}
+
+let unknown = TemperatureUnit(rawValue: "x")
+
+if unknown == nil {
+    print("nil")
+}
+
+class Product {
+    let name: String
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity < 1 { return nil }
+        self.quantity = quantity
+        super.init(name: name)
     }
 }
