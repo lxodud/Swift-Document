@@ -66,16 +66,16 @@ func makeIncrementer(forIncrement amount: Int) -> () -> Int {
     return incrementer
 }
 
-let incremnetByTen = makeIncrementer(forIncrement: 10)
-
-print(incremnetByTen())
-// 10
-print(incremnetByTen())
-// 20
-print(incremnetByTen())
-// 30
-print(incremnetByTen())
-// 40
+//let incremnetByTen = makeIncrementer(forIncrement: 10)
+//
+//print(incremnetByTen())
+//// 10
+//print(incremnetByTen())
+//// 20
+//print(incremnetByTen())
+//// 30
+//print(incremnetByTen())
+//// 40
 
 let incrementBySeven = makeIncrementer(forIncrement: 7)
 
@@ -89,5 +89,15 @@ print(incrementBySeven())
 // 28
 
 
-print(incremnetByTen())
+//print(incremnetByTen())
 // 50
+
+let incremnetByTen = makeIncrementer(forIncrement: 10)
+let anotherIncrementByTen = incremnetByTen
+
+print(incremnetByTen())
+// 10
+print(anotherIncrementByTen())
+// 20
+print(incremnetByTen())
+// 30
