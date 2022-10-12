@@ -320,3 +320,32 @@ import CoreGraphics
 //        gradeUp()
 //    }
 //}
+
+class Vehicle {
+    var numberOfWheels = 0
+    var description: String {
+        return "\(numberOfWheels) wheel(s)"
+    }
+}
+
+let vehicle = Vehicle()
+print("Vehicle: \(vehicle.description)")
+// Vehicle: 0 wheel(s)
+
+class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        numberOfWheels = 2
+    }
+}
+
+class A {
+    var a: String = "a"
+}
+
+class B: A {
+    var C: String
+    init(C: String) {
+        self.C = C
+    }
+}
