@@ -40,13 +40,13 @@ private class SomePrivateClass {                // explicitly private class
 //func someFunction() -> (SomeInternalClass, SomePrivateClass) {
 //    // function implementation goes here
 //}
-
-public enum CompassPoint {
-    case north
-    case south
-    case east
-    case west
-}
+//
+//public enum CompassPoint {
+//    case north
+//    case south
+//    case east
+//    case west
+//}
 
 // MARK: 함수 접근 수준
 
@@ -125,41 +125,42 @@ public enum CompassPoint {
 //
 //fileprivate let some = FilePrivateClass()
 
-// MARK: fileprivate vs private
-//private class FilePrivateClass {
+//// MARK: fileprivate vs private
+//fileprivate class FilePrivateClass {
 //    let a: Int = 2
 //}
-////
+//////
 //private class PrivateClass {
 //    public let a = FilePrivateClass()
 //}
-//
+////
 //internal class InternalClass {
 //    let a: Int = 0
 //}
-
+//
 //private let some = PrivateClass()
-// 이건 가능하죠?
-// 가능
-
-//fileprivate let some = PrivateClass()
+//// 이건 가능하죠?
+//// 가능
+//
+//fileprivate let some1 = PrivateClass()
 //print(some.a.a)
-// 이거도 가능해요
-// 더 높은 접근수준인데 왜 될까요??
-// 가능
-
-//internal let some = PrivateClass()
-// 불가능 인터널임
-
-//fileprivate let some = FilePrivateClass()
-
+//// 이거도 가능해요
+//// 더 높은 접근수준인데 왜 될까요??
+//// 가능
+//
+//internal let some2 = PrivateClass()
+//// 불가능 인터널임
+//
+//fileprivate let some3 = FilePrivateClass()
+//
 //class SomeClass {
 //    private(set) var a: Int = 0
 //}
+////
+////let number = SomeClass()
+////
+////print(number.a)
+////
+////number.a = 1
 //
-//let number = SomeClass()
-//
-//print(number.a)
-
-//number.a = 1
 
