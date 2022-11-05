@@ -181,3 +181,31 @@ class HTMLElement {
         print("\(name) is being deinitialized")
     }
 }
+
+class A {
+    let text: String = "aaa"
+    
+//    lazy var aFunc = aa
+    lazy var b = B(text: "이지")
+    
+    func aa() -> String {
+        return self.text
+    }
+    
+    deinit {
+        print("해제 된당~")
+    }
+}
+
+class B {
+    let text: String
+
+    init(text: String) {
+        self.text = text
+    }
+}
+
+var a: A? = A()
+let bb = a?.b
+
+a = nil
