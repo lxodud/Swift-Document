@@ -101,3 +101,36 @@ print(anotherIncrementByTen())
 // 20
 print(incremnetByTen())
 // 30
+
+var completionHandlers: [() -> Void] = []
+
+func someFunctionWithEscapingClosure(completionHandler: @escaping() -> Void) {
+    completionHandlers.append(completionHandler)
+}
+
+//func nonAutoClouserFunc(closure: () -> Void) {
+//    closure()
+//}
+//
+//nonAutoClouserFunc(closure: {
+//    print("하이")
+//
+//}) // 하이
+//
+//nonAutoClouserFunc {
+//    print("하이")
+//} // 하이
+//
+//func autoClouserFunc(closure: @autoclosure () -> Void) {
+//    closure()
+//}
+//
+//autoClouserFunc(closure: print("하이"))
+
+func someFunc(closure: @autoclosure () -> String) {
+    print(closure())
+}
+
+someFunc(closure: "ac")
+
+
