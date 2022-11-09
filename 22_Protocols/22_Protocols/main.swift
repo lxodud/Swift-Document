@@ -375,7 +375,7 @@ class SomeClass: SomeProtocol {
     var someNumber: Int = 0
 }
 
-let someClass: SomeClass = SomeClass()
+let sampleClass: SomeClass = SomeClass()
 
 print(someClass.someNumber)
 
